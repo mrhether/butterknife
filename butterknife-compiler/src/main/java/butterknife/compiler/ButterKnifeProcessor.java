@@ -1311,9 +1311,6 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
     private final Map<String, String> rClasses = new LinkedHashMap<>();
     private String currentPackageName;
 
-    RClassScanner() {
-    }
-
     @Override public void visitSelect(JCTree.JCFieldAccess jcFieldAccess) {
       Symbol symbol = jcFieldAccess.sym;
       if (symbol != null
