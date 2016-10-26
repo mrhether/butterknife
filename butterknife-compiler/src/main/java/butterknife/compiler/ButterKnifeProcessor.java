@@ -1236,7 +1236,6 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
   }
 
   private Id getId(QualifiedId qualifiedId) {
-    System.out.println("Getting ID with " + qualifiedId);
     if (symbols.get(qualifiedId) == null) {
       symbols.put(qualifiedId, new Id(qualifiedId.id));
     }
@@ -1299,7 +1298,6 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
                       innerClassName);
               String resourceName = variableElement.getSimpleName().toString();
               QualifiedId qualifiedId = new QualifiedId(respectivePackageName, id);
-              System.out.println("[parseCompiledR] Addding ID with " + qualifiedId);
               symbols.put(qualifiedId, new Id(id, rClassName, resourceName));
             }
           }
@@ -1376,7 +1374,6 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
         int id = Integer.valueOf(jcVariableDecl.getInitializer().toString());
         String resourceName = jcVariableDecl.getName().toString();
         QualifiedId qualifiedId = new QualifiedId(packageName, id);
-        System.out.println("[VarScanner] Addding ID with " + qualifiedId);
         ids.put(qualifiedId, new Id(id, className, resourceName));
       }
     }
