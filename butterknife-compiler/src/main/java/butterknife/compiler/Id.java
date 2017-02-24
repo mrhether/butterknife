@@ -23,7 +23,7 @@ final class Id {
     this.value = value;
     this.code = className.topLevelClassName().equals(ANDROID_R)
       ? CodeBlock.of("$L.$N", className, resourceName)
-      : CodeBlock.of("$T.$N", className, resourceName);
+      : CodeBlock.of("$L.$N", className, resourceName);
     this.qualifed = true;
   }
 
